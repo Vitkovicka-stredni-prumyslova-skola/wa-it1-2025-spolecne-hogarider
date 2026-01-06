@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f6f7f8;
+    color: #222;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* === Sidebar === */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.info h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.info p {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 12px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    padding: 6px 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+    color: #0077ff;
+    transform: translateX(4px);
+}
+
+.menu a.active {
+    color: #0077ff;
+    font-weight: 600;
+}
+
+.footer {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
+
+
+.content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+    animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.card ul {
+    margin: 10px 0 0 20px;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* === Animace === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+
+.card {
+    opacity: 0;
+    transform: translateY(20px); 
+    animation: fadeUp 0.8s ease forwards; 
+}
+
+
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.9s; }
+.card:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+#theme-toggle {
+    margin-top: 30px;
+    padding: 8px 12px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+#theme-toggle:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.03);
+}
+
+
+.dark-theme {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+.dark-theme .sidebar {
+    background-color: #1f1f1f;
+    border-right: 1px solid #333;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .avatar {
+    background-color: #eaeaea;
+    color: #1f1f1f;
+}
+
+.dark-theme .menu a {
+    color: #ddd;
+}
+
+.dark-theme .menu a.active {
+    color: #4ea3ff;
+}
+
+.dark-theme .card {
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme #theme-toggle {
+    background-color: #2b2b2b;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-theme #theme-toggle:hover {
+    background-color: #3a3a3a;
+}
